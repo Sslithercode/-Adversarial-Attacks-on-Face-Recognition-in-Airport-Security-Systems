@@ -10,15 +10,16 @@ This project showcases a **Projected Gradient Descent (PGD) adversarial attack**
 
 ## The Scenario 🎭
 
-Imagine a high-security airport where facial recognition systems are used to verify identities. An attacker uploads two similar images—one of their own face and the other of a target individual. By applying the **PGD adversarial attack**, the attacker subtly alters their image, confusing the system into thinking they're someone else, bypassing security. 🚨👮‍♂️
+Imagine a high-security airport where facial recognition systems are used to verify identities. An attacker is able to get access or understand what model airport security is using for facial recognition, and acess to the camera feed. The attacker uses an image of the person and a target image which they want to convert into an adversarial image.By applying the **PGD adversarial attack**, the attacker subtly alters the target image, and inserts it into the camera feed confusing the system into thinking they are not on the ban list and thus bypassing security. 🚨👮‍♂️
 
 ### How it Works 🛠️:
-1. **Upload Two Faces** 📸: You upload images of two faces—one representing the attacker and the other the target.
+1. **Upload Two Faces** 📸: You upload images of two faces—one representing the one on the ban list and the other the current person trying to circumnavigate the security system.
 2. **PGD Attack** 💥: The model applies a **PGD attack** to subtly modify the attacker's image.
 3. **Face Matching** 🔍: The system calculates embeddings for both faces before and after the attack.
-4. **Adversarial Result** ⚠️: The attacker’s image is transformed in a way that reduces the distance between the embeddings, making the system believe the faces are a match.
+4. **Adversarial Result** ⚠️: The attacker’s image is transformed in a way that increasing the distance between the embeddings, making the system believe the faces are not a match.
 
 ### How to Use 📝:
-1. Clone this repository:
+1. Clone this repository and run with streamlit:
    ```bash
    git clone https://github.com/Sslithercode/pgd-adversarial-attack.git
+   streamlit run main.py
